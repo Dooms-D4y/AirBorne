@@ -1,6 +1,20 @@
 # BunkX - Professional Deauthentication Tool
  
 <img src="https://github.com/Dooms-D4y/BunkX/blob/main/banner.png" alt="BunkX Banner" style="width:100%; max-width:800px;"/>
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
+  <img src="https://img.shields.io/github/stars/Dooms-D4y/BunkX?style=social" />
+  <img src="https://img.shields.io/github/forks/Dooms-D4y/BunkX?style=social" />
+  <img src="https://img.shields.io/github/last-commit/Dooms-D4y/BunkX" />
+  <img src="https://img.shields.io/github/issues/Dooms-D4y/BunkX" />
+  <img src="https://img.shields.io/github/issues-pr/Dooms-D4y/BunkX" />
+  <img src="https://img.shields.io/github/repo-size/Dooms-D4y/BunkX" />
+  <img src="https://img.shields.io/github/languages/top/Dooms-D4y/BunkX" />
+  <img src="https://img.shields.io/badge/Platform-Linux-blue" />
+  <img src="https://img.shields.io/badge/Security-Tested-success?logo=hackaday" />
+</p>
+
+
 
 ## Overview
 BunkerX is an advanced deauthentication tool designed for security professionals to test wireless network resilience. This powerful bash script leverages the aircrack-ng suite to perform targeted deauthentication attacks, helping identify vulnerabilities in WiFi networks.
