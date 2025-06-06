@@ -9,6 +9,8 @@ BunkerX is an advanced deauthentication tool designed for security professionals
 **Contact**: [d00mzd4y@proton.me](mailto:d00mzd4y@proton.me)  
 **GitHub**: [https://github.com/Dooms-D4y/BunkX](https://github.com/Dooms-D4ySec/BunkX)
 
++ Legal Use Only - Always obtain proper authorization before testing any network
+
 # Key Features
 - 📡 Automatic monitor mode configuration
 - 🔍 Network scanning with BSSID/channel detection
