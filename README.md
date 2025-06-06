@@ -1,13 +1,13 @@
-# BunkerX - Professional Deauthentication Tool
+# BunkX - Professional Deauthentication Tool
 
-![BunkerX Banner](https://raw.githubusercontent.com/DoomsDaySec/BunkerX/main/assets/banner.png)
+![BunkX Banner](https://raw.githubusercontent.com/Dooms-D4y/BunkX/main/assets/banner.png)
 
 ## Overview
 BunkerX is an advanced deauthentication tool designed for security professionals to test wireless network resilience. This powerful bash script leverages the aircrack-ng suite to perform targeted deauthentication attacks, helping identify vulnerabilities in WiFi networks.
 
 **Developed by**: DoomsDay  
 **Contact**: [d00mzd4y@proton.me](mailto:d00mzd4y@proton.me)  
-**GitHub**: [https://github.com/DoomsDaySec/BunkerX](https://github.com/DoomsDaySec/BunkerX)
+**GitHub**: [https://github.com/Dooms-D4y/BunkX](https://github.com/Dooms-D4ySec/BunkX)
 
 # Key Features
 - 📡 Automatic monitor mode configuration
@@ -31,7 +31,7 @@ BunkerX is an advanced deauthentication tool designed for security professionals
    
 2. sudo apt upgrade
    
-3. git clone https://github.com/DoomsDaySec/BunkX.git
+3. git clone https://github.com/Dooms-D4y/BunkX.git
 
 4. cd BunkX
    
@@ -40,7 +40,7 @@ BunkerX is an advanced deauthentication tool designed for security professionals
 
 ## Usage
 
-sudo ./bunkerx.sh
+sudo ./BunkX.sh
 
 1. Enter your wireless interface (e.g., wlan0)
 2. Select target network from the scanned list
@@ -48,10 +48,10 @@ sudo ./bunkerx.sh
 4. Automatic cleanup restores network settings
 
 ## Screenshots
-![Network Scanning](https://raw.githubusercontent.com/DoomsDaySec/BunkerX/main/assets/scan.png)
+![Network Scanning](https://raw.githubusercontent.com/Dooms-D4y/BunkX/main/assets/scan.png)
 *Network scanning and selection interface*
 
-![Attack in Progress](https://raw.githubusercontent.com/DoomsDaySec/BunkerX/main/assets/attack.png)
+![Attack in Progress](https://raw.githubusercontent.com/Dooms-D4y/BunkX/main/assets/attack.png)
 *Deauthentication attack execution*
 
 # Legal Disclaimer
@@ -76,7 +76,7 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
-## License
+# License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Support
