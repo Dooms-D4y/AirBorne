@@ -17,7 +17,7 @@
 
 
 ## Overview
-BunkerX is an advanced deauthentication tool designed for security professionals to test wireless network resilience. This powerful bash script leverages the aircrack-ng suite to perform targeted deauthentication attacks, helping identify vulnerabilities in WiFi networks.
+BunkX is an advanced deauthentication tool designed for security professionals to test wireless network resilience. This powerful bash script leverages the aircrack-ng suite to perform targeted deauthentication attacks, helping identify vulnerabilities in WiFi networks.
 
 **Developed by**: DoomsDay  
 **Contact**: [d00mzd4y@proton.me](mailto:d00mzd4y@proton.me)  
@@ -40,6 +40,9 @@ BunkerX is an advanced deauthentication tool designed for security professionals
 - Root privileges
 - Aircrack-ng suite (sudo apt install aircrack-ng)
 - iw utility (`sudo apt install iw`)
+- [Aircrack-ng suite](https://www.aircrack-ng.org/)
+- [iw utility](https://wiki.archlinux.org/title/Iw)
+
 
 ## Installation
 
