@@ -67,10 +67,14 @@ sudo ./bunkx.sh
 4. Automatic cleanup restores network settings
 
 ## Screenshots
-![Network Scanning](https://raw.githubusercontent.com/Dooms-D4y/BunkX/main/assets/scan.png)
+
+<img src="https://github.com/Dooms-D4y/BunkX/blob/main/scanning.png" alt="Scanning Screenshot" style="width:100%; max-width:800px;"/>
+
 *Network scanning and selection interface*
 
-![Attack in Progress](https://raw.githubusercontent.com/Dooms-D4y/BunkX/main/assets/attack.png)
+<img src="https://github.com/Dooms-D4y/BunkX/blob/main/attack.png" alt="BunkX Banner" style="width:100%; max-width:800px;"/>
+
+
 *Deauthentication attack execution*
 
 # Legal Disclaimer
