@@ -35,7 +35,7 @@ BunkX is an advanced deauthentication tool designed for security professionals t
 - 🎨 Color-coded interface for intuitive operation
 
 ## Prerequisites
-- Linux OS (Kali Linux recommended)
+- Linux OS (Parrotsec Os or Kali Linux recommended)
 - Wireless adapter supporting monitor mode
 - Root privileges
 - Aircrack-ng suite (sudo apt install aircrack-ng)
