@@ -54,12 +54,12 @@ BunkX is an advanced deauthentication tool designed for security professionals t
 
 4. cd BunkX
    
-5. chmod +x Bunkx.sh
+5. chmod +x BunkX.sh
 
 
 ## Usage
 
-sudo ./BunkX.sh
+sudo ./bunkx.sh
 
 1. Enter your wireless interface (e.g., wlan0)
 2. Select target network from the scanned list
