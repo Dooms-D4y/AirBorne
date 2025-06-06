@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# ======================================================================================
-# BunkX Deauthentication Tool - Professional Network Security Testing Suite
+# ==========================================================================================================
+# BunkX is a bash-based deauthentication attack tool for wireless network security testing using aircrack-ng.
 # Developer: DoomsDay (d00mzd4y@proton.me)
 # GitHub: https://github.com/Dooms-D4y
 # 
 # Features:
-# - AP deauthentication attacks
+# - Targeted deauthentication attacks
 # - Network scanning and selection
 # - Monitor mode management
 # - Graceful cleanup
 # Just be responsible enough. I'm not to be held responsible for your mess
 # But have fun being productive 😉
-# ======================================================================================
+# ==========================================================================================================
 
 # Display BunkX banner
 echo -e "\e[1;31m"
