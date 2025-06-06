@@ -1,40 +1,39 @@
 #!/bin/bash
 
 # ======================================================================================
-# BunkerX Deauthentication Tool - Professional Network Security Testing Suite
+# BunkX Deauthentication Tool - Professional Network Security Testing Suite
 # Developer: DoomsDay (d00mzd4y@proton.me)
-# GitHub: https://github.com/DoomsDaySec/BunkerX
+# GitHub: https://github.com/Dooms-D4y
 # 
 # Features:
-# - Targeted deauthentication attacks
+# - AP deauthentication attacks
 # - Network scanning and selection
 # - Monitor mode management
 # - Graceful cleanup
-# - Legal compliance warnings
+# Just be responsible enough. I'm not to be held responsible for your mess
+# But have fun being productive 😉
 # ======================================================================================
 
-# Display BunkerX banner
+# Display BunkX banner
 echo -e "\e[1;31m"
 cat << "EOF"
- 
  ____                    __      __   __     
 /\  _`\                 /\ \    /\ \ /\ \    
 \ \ \L\ \  __  __    ___\ \ \/'\\ `\`\/'/'   
  \ \  _ <'/\ \/\ \ /' _ `\ \ , < `\/ > <     
   \ \ \L\ \ \ \_\ \/\ \/\ \ \ \\`\  \/'/\`\  
    \ \____/\ \____/\ \_\ \_\ \_\ \_\/\_\\ \_\
-    \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/ \/_/
-                                             
-                                             
-                                                
+    \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/ \/_ /                                            
 EOF
 echo -e "\e[0m"
 
 # Developer information
 echo -e "\e[1;36m"
-echo "Developed by: DoomsDay"
-echo "Contact: d00mzd4y@proton.me"
-echo "GitHub: https://github.com/DoomsDaySec/BunkerX"
+echo "         +-----------------------------------------------+"
+echo "         |Developed by: DoomsDay                         |"
+echo "         |Contact: d00mzd4y@proton.me                    |"
+echo "         |GitHub: https://github.com/Dooms-D4y/BunkX.git |"
+echo "         +---------------------[v0.1]--------------------+"
 echo -e "\e[0m"
 echo "=================================================================================="
 
@@ -161,7 +160,7 @@ scan_networks() {
 }
 
 # Main script
-echo -e "\n\e[1;46m BURN THE ROUT3R5 $ LULZ \e[0m"
+echo -e "\n\e[1;46m BURN THE ROUT3R5 & LULz \e[0m"
 echo -e "\e[1;33m[!] 🖕 th3 syst3m! Press Ctrl+C to exit\e[0m\n"
 
 # Interface selection
