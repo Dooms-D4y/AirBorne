@@ -1,6 +1,6 @@
 # BunkX - Professional Deauthentication Tool
-
-![BunkX Banner](https://raw.githubusercontent.com/Dooms-D4y/BunkX/main/assets/banner.png)
+ 
+<img src="https://github.com/Dooms-D4y/BunkX/blob/main/banner.png" alt="BunkX Banner" style="width:100%; max-width:800px;"/>
 
 ## Overview
 BunkerX is an advanced deauthentication tool designed for security professionals to test wireless network resilience. This powerful bash script leverages the aircrack-ng suite to perform targeted deauthentication attacks, helping identify vulnerabilities in WiFi networks.
