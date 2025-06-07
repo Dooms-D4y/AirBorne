@@ -26,6 +26,7 @@ BunkX is an advanced deauthentication tool designed for security professionals t
 + Legal Use Only - Always obtain proper authorization before testing any network
 
 # Key Features
+- 🕵️‍♂️ Automatic MAC Address Spoofing
 - 📡 Automatic monitor mode configuration
 - 🔍 Network scanning with BSSID/channel detection
 - 🎯 Targeted deauthentication attacks
