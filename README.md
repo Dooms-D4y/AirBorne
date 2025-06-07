@@ -54,7 +54,7 @@ BunkX is an advanced deauthentication tool designed for security professionals t
 
 4. cd BunkX
    
-5. chmod +x BunkX.sh
+5. chmod +x bunkx.sh
 
 
 ## Usage
