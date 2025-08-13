@@ -17,11 +17,11 @@
 
 
 ## Overview
-BunkX is an advanced deauthentication tool designed for security professionals to test wireless network resilience. This powerful bash script leverages the aircrack-ng suite to perform targeted deauthentication attacks, helping identify vulnerabilities in WiFi networks.
+Airborne is an advanced deauthentication tool designed for security professionals to test wireless network resilience. This powerful bash script leverages the aircrack-ng suite to perform targeted deauthentication attacks, helping identify vulnerabilities in WiFi networks.
 
 **Developed by**: DoomsDay  
 **Contact**: [d00mzd4y@proton.me](mailto:d00mzd4y@proton.me)  
-**GitHub**: [https://github.com/Dooms-D4y/BunkX](https://github.com/Dooms-D4ySec/BunkX)
+**GitHub**: [https://github.com/Dooms-D4y/BunkX](https://github.com/Dooms-D4ySec/AirBorne)
 
 + Legal Use Only - Always obtain proper authorization before testing any network
 
@@ -51,9 +51,9 @@ BunkX is an advanced deauthentication tool designed for security professionals t
    
 2. sudo apt upgrade
    
-3. git clone https://github.com/Dooms-D4y/BunkX.git
+3. git clone https://github.com/Dooms-D4y/AirBorne.git
 
-4. cd BunkX
+4. cd AirBorne
    
 5. chmod +x bunkx.sh
 
