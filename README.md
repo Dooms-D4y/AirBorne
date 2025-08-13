@@ -55,12 +55,12 @@ Airborne is an advanced deauthentication tool designed for security professional
 
 4. cd AirBorne
    
-5. chmod +x bunkx.sh
+5. chmod +x airborne.sh
 
 
 ## Usage
 
-sudo ./bunkx.sh
+sudo ./airborne.sh
 
 1. Enter your wireless interface (e.g., wlan0)
 2. Select target network from the scanned list
