@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ======================================================================================
-# BunkX Deauthentication Tool - Professional Network Security Testing Suite
+# AirBorne Deauthentication Tool - Professional Network Security Testing Suite
 # Version: 0.1
 # Developer: DoomsDay (d00mzd4y@proton.me)
 # GitHub: https://github.com/Dooms-D4y/BunkX
@@ -18,13 +18,12 @@
 # Display BunkX banner
 echo -e "\e[1;31m"
 cat << "EOF"
- ____                    __      __   __     
-/\  _`\                 /\ \    /\ \ /\ \    
-\ \ \L\ \  __  __    ___\ \ \/'\\ `\`\/'/'   
- \ \  _ <'/\ \/\ \ /' _ `\ \ , < `\/ > <     
-  \ \ \L\ \ \ \_\ \/\ \/\ \ \ \\`\  \/'/\`\  
-   \ \____/\ \____/\ \_\ \_\ \_\ \_\/\_\\ \_\
-    \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/ \/_/
+    ___    _      ____                      
+   /   |  (_)____/ __ )____  _________  ___ 
+  / /| | / / ___/ __  / __ \/ ___/ __ \/ _ \
+ / ___ |/ / /  / /_/ / /_/ / /  / / / /  __/
+/_/  |_/_/_/  /_____/\____/_/  /_/ /_/\___/ 
+                                            
 EOF
 echo -e "\e[0m"
 
