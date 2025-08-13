@@ -21,7 +21,7 @@ Airborne is an advanced deauthentication tool designed for security professional
 
 **Developed by**: DoomsDay  
 **Contact**: [d00mzd4y@proton.me](mailto:d00mzd4y@proton.me)  
-**GitHub**: [https://github.com/Dooms-D4y/BunkX](https://github.com/Dooms-D4ySec/AirBorne)
+**GitHub**: [https://github.com/Dooms-D4y/AirBorne](https://github.com/Dooms-D4y/AirBorne)
 
 + Legal Use Only - Always obtain proper authorization before testing any network
 
