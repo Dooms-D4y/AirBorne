@@ -79,7 +79,7 @@ sudo ./airborne.sh
 *Deauthentication attack execution*
 
 # Legal Disclaimer
-> ⚠️ # WARNING: BunkX is intended solely for authorized security testing and educational purposes. Unauthorized use against networks without explicit permission is illegal and violates:
+> ⚠️ # WARNING: AirBorne is intended solely for authorized security testing and educational purposes. Unauthorized use against networks without explicit permission is illegal and violates:
 > - Computer Fraud and Abuse Act (CFAA)
 > - Wireless Telegraphy Act
 > - Various international computer misuse laws
